@@ -16,7 +16,7 @@ export const Article = sequelize.define("Article", {
   },
   status: {
     type: DataTypes.ENUM,
-    values: ("published", "archived"),
+    values: ["published", "archived"],
     defaultValue: "published",
   },
    user_id: { 
@@ -32,12 +32,12 @@ export const Article = sequelize.define("Article", {
 //relaciones
 Article.belongsTo(User,{
   foreignKey: user_id,
-  as: "author"
+  as: "author",
 });
 
 User.hasMany(Article, {
   foreignKey: user_id,
-  as: "articles"
+  as: "articles",
 });
 
 

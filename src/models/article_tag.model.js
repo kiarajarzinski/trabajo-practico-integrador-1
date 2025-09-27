@@ -19,21 +19,22 @@ Article.belongsToMany(Tag, {
   through: ArticleTag,
   foreignKey: "article_id",
   as: "tags",
+  onDelete: 'CASCADE'
 });
 Tag.belongsToMany(Article,{
   through: ArticleTag,
   foreignKey: "tag_id",
   as: "articles",
-
+  onDelete: 'CASCADE'
 }
 
 );
 ArticleTag.belongsTo(Article,{
   foreignKey: "article_id",
-  as: "article"
+  as: "article",
 });
 
 ArticleTag.belongsTo(Tag,{
   foreignKey: "tag_id",
-  as: "tag"
+  as: "tag",
 });
