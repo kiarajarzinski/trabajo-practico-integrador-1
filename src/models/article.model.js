@@ -1,7 +1,8 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
+import { User } from "./user.model.js"
 
-export const ArticleModel = sequelize.define("Article", {
+export const Article = sequelize.define("Article", {
   title: {
     type: DataTypes.STRING(200),
     allowNull: false,
@@ -12,12 +13,32 @@ export const ArticleModel = sequelize.define("Article", {
   },
   excerpt: {
     type: DataTypes.STRING(500),
-    allowNull: true,
   },
   status: {
-    type: DataTypes.ENUM("published", "archived"),
+    type: DataTypes.ENUM,
+    values: ("published", "archived"),
     defaultValue: "published",
-    allowNull: false
   },
+   user_id: { 
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+},
+{
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+}
+);
+//relaciones
+Article.belongsTo(User,{
+  foreignKey: user_id,
+  as: "author"
 });
+
+User.hasMany(Article, {
+  foreignKey: user_id,
+  as: "articles"
+});
+
+
 

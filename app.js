@@ -17,3 +17,4 @@ sequelize.sync({force:true}).then(() =>  {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
   });
 });
+
