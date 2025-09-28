@@ -29,12 +29,12 @@ export const Profile = sequelize.define("Profile", {
 
 //relaciones
 Profile.belongsTo(User, {
-  foreignKey: user_id,
+  foreignKey: 'user_id',
   as: "user"
 
 });
 User.hasOne(Profile, {
-   foreignKey: user_id,
+   foreignKey: 'user_id',
    as: "profile"
 });
 

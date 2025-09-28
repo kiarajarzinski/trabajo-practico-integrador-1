@@ -31,12 +31,12 @@ export const Article = sequelize.define("Article", {
 );
 //relaciones
 Article.belongsTo(User,{
-  foreignKey: user_id,
+  foreignKey: 'user_id',
   as: "author",
 });
 
 User.hasMany(Article, {
-  foreignKey: user_id,
+  foreignKey: 'user_id',
   as: "articles",
 });
 

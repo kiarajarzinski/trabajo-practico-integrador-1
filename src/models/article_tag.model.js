@@ -38,3 +38,4 @@ ArticleTag.belongsTo(Tag,{
   foreignKey: "tag_id",
   as: "tag",
 });
+

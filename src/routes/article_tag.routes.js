@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { addTagToArticle, removeTagFromArticle } from "../controllers/article_tag.controller.js";
-import { authAdminMiddleware } from "../middlewares/authAdmin.js";
 import { ownerMiddleware } from "../middlewares/authOwner.js";
 import { authMiddleware } from "../middlewares/auth.js";
 import { validateArticleTagId, addTagToArticleValidator, removeTagFromArticleValidator } from "../middlewares/validations/article_tag.validator.js";

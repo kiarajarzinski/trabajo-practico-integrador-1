@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import { Profile } from "../models/profile.model.js";
 import { User } from "../models/user.model.js";
 import { hashPassword, comparePasswords } from "../helpers/bcrypt.helper.js";
